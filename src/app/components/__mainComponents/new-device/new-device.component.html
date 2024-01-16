@@ -1,0 +1,47 @@
+<div class="container-fluid flex-row justify-content-between p-4">
+  <div
+    *ngIf="!deviceChosen"
+    class="row align-items-start">
+    <form
+      [formGroup]="chooseDeviceForm">
+      <select class="form-select"
+            aria-label="Default select example"
+            formControlName="deviceType"
+            (change)="onChosen()">
+        <option>Gerätetyp wählen ...</option>
+        <option
+        *ngFor="let type of types">
+          {{type}}
+        </option>
+      </select>
+    </form>
+  </div>
+
+  <div
+    *ngIf="deviceChosen"
+    class="row align-items-start">
+
+    <ng-container
+      [ngSwitch]="true">
+      <div *ngSwitchCase="device === 'Drohne'"       class="form-group shadow-sm"><app-drone></app-drone></div>
+      <div *ngSwitchCase="device === 'Flarm'"       class="form-group shadow-sm"><app-flarm></app-flarm></div>
+    </ng-container>
+
+  </div>
+
+
+  <div
+    *ngIf="deviceChosen"
+    class="form-action-btn-group my-3">
+    <div class="btn-group w-50">
+      <button class="btn btn-primary btn-md w-50" type="submit">Inbetriebnahme speichern</button>
+      <button class="btn btn-secondary btn-md w-50" type="submit">Entwurf speichern</button>
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-warning btn-md" (click)="onReset()">Reset</button>
+      <button class="btn btn-danger btn-md" (click)="onCancel()">Abbrechen</button>
+    </div>
+  </div>
+</div>
+
+

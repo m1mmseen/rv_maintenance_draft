@@ -1,0 +1,40 @@
+<div class="d-flex flex-column justify-content-between p-4" id="newClient">
+  <div>
+    <div class="row">
+    <div class="col-sm-6">
+      <label for="clientName" class="form-label">Kunde Name</label>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" id="clientName">
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <label for="clientCompany" class="form-label">Kunde Firma</label>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" id="clientCompany">
+      </div>
+    </div>
+
+    <label>Kunde Kontakt Email</label>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+      <span class="input-group-text" id="basic-addon1">@</span>
+    </div>
+    </div>
+
+
+
+    </div>
+
+  <div>
+    <div class="col-sm-12 d-flex justify-content-between">
+      <div class="w-75">
+        <button class="btn btn-primary me-2 w-50">Kunde speichern</button>
+        <button class="btn btn-secondary" (click)="saveAndAddDevices()">Geräte hinzufügen</button>
+      </div>
+      <button class="btn btn-danger">Abbrechen</button>
+    </div>
+  </div>
+  </div>
+
+
